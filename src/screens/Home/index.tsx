@@ -10,6 +10,7 @@ import {
  Header,
  HeaderContent,
  TotalCars,
+ CarList
 } from './styles';
 
 const carData = [
@@ -52,7 +53,11 @@ export function Home(){
         </HeaderContent>
       </Header>
       
-      <Car data={carData[0]}/>
+      <CarList
+        data={carData}
+        keyExtractor={item => item.name}
+        renderItem={({item}) =>  <Car data={item}/> }
+      />
     </Container>
  )
 }

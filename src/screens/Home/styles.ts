@@ -38,3 +38,12 @@ export const TotalCars = styled.Text`
   `}
 
 `
+
+export const CarList = styled.FlatList.attrs({
+  contentContainerStyle: {
+    padding: 24
+  },
+  sholVerticalSrollIndicator: false,
+})`
+
+`
