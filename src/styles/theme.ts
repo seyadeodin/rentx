@@ -25,6 +25,6 @@ export default {
 
     SECONDARY_400: 'Archivo_400Regular',
     SECONDARY_500: 'Archivo_500Medium',
-    SECONDARY_600: 'Archivo_600Semibold'
+    SECONDARY_600: 'Archivo_600SemiBold'
   }
 }
