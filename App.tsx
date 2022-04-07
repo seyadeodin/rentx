@@ -1,7 +1,9 @@
+
 import 'react-native-gesture-handler';
 
 import React from 'react';
 import AppLoading from 'expo-app-loading';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ThemeProvider } from 'styled-components/native'
 import {
   useFonts,
@@ -17,10 +19,7 @@ import {
 
 import theme from './src/styles/theme'
 
-import { Home } from './src/screens/Home';
-import { CarDetails } from './src/screens/CarDetails';
-import { GestureHandlerRootView, RotationGestureHandler } from 'react-native-gesture-handler';
-import { Scheduling } from './src/screens/Scheduling';
+import { Routes } from './src/routes';
 
 export default function App() {
   const [ fontsLoaded ] = useFonts({
@@ -38,8 +37,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme} >
       <GestureHandlerRootView style={{flex: 1}}>
-        {/* <CarDetails/> */}
-        <Scheduling/>
+        <Routes/>
       </GestureHandlerRootView>
     </ThemeProvider>
   );
