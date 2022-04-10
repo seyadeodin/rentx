@@ -1,5 +1,8 @@
+import { FlatListProps } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
+import { CarDTO } from '../../dtos/CarDTO';
 
 export const Container = styled.View`
   flex: 1;
@@ -39,11 +42,12 @@ export const TotalCars = styled.Text`
 
 `
 
-export const CarList = styled.FlatList.attrs({
+export const CarList = styled(FlatList)
+.attrs({
   contentContainerStyle: {
     padding: 24
   },
   sholVerticalSrollIndicator: false,
 })`
 
-`
+`  as React.ComponentType as new <DataListProps>() => FlatList<DataListProps>
