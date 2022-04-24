@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 import { BackButton } from '../../components/BackButton';
@@ -25,7 +26,6 @@ import {
 } from './styles';
 import { Accessory } from '../../components/Accessory';
 import { CarDTO } from '../../dtos/CarDTO';
-import { StatusBar } from 'expo-status-bar';
 
 
 interface Params {
@@ -39,7 +39,7 @@ export function CarDetails(){
   const { car } = route.params as Params;
 
   function handleConfirmRental() {
-    navigation.navigate('scheduling');
+    navigation.navigate('scheduling', {car: car});
   }
 
   function handleGoBack(){

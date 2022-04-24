@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import { StatusBar } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { useTheme } from 'styled-components';
+import { Ionicons} from '@expo/vector-icons';
 
 import  api from '../../services/api'
 import { CarDTO } from '../../dtos/CarDTO';
@@ -15,29 +17,9 @@ import {
  Header,
  HeaderContent,
  TotalCars,
- CarList
+ CarList,
+ MyCarsButton,
 } from './styles';
-
-const carData = [
-  {
-    brand: 'audi',
-    name: 'Mazda',
-    rent: {
-      period: 'Manhã',
-      price: 600,
-    },
-    thumbnail: 'https://pngimg.com/uploads/audi/audi_PNG99491.png'
-  },
-  {
-    brand: 'volkswagen',
-    name: 'Kombi',
-    rent: {
-      period: 'Manhã',
-      price: 759,
-    },
-    thumbnail: 'https://static.vakinha.com.br/uploads/vakinha/image/373408/kombi.png?ims=700x410'
-  }
-]
 
 export function Home(){
   const navigation = useNavigation();
@@ -45,8 +27,14 @@ export function Home(){
   const [ cars, setCars ] = useState([]);
   const [ loading, setLoading ] = useState(true)
 
+  const { COLORS } = useTheme();
+
   function handleCarDetails(car: CarDTO) {
     navigation.navigate('carDetails', { car });
+  }
+
+  function handleOpenMyCars(){
+    navigation.navigate('myCars');
   }
 
   useEffect(() => {
@@ -77,7 +65,7 @@ export function Home(){
             width={RFValue(108)}
           />
           <TotalCars>
-            Total 12 carros
+            Total {cars.length} carros
           </TotalCars>
         </HeaderContent>
       </Header>
@@ -95,6 +83,15 @@ export function Home(){
         />
 
       }
+      <MyCarsButton
+        onPress={handleOpenMyCars}
+      >
+        <Ionicons
+          name='ios-car-sport'
+          size={32}
+          color={COLORS.SHAPE}
+        />
+      </MyCarsButton>
     </Container>
  )
 }

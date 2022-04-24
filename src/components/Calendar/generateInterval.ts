@@ -1,5 +1,5 @@
 import { DateData } from 'react-native-calendars'
-import { eachDayOfInterval, format } from 'date-fns'
+import { eachDayOfInterval, format, parseISO } from 'date-fns'
 
 import { getPlatformDate } from '../../utils/getPlatformDate'
 import { MarkedDateProps } from '.'
@@ -9,8 +9,8 @@ export function generateInterval(start: DateData, end: DateData){
   let interval: MarkedDateProps = {};
 
   eachDayOfInterval({
-    start: new Date(start.timestamp), 
-    end: new Date(end.timestamp)
+    start:  parseISO(start.dateString), 
+    end: parseISO(end.dateString)
   })
   .forEach(item => {
     const date = format(getPlatformDate(item), 'yyyy-MM-dd')
