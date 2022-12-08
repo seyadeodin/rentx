@@ -96,11 +96,11 @@ export function Home(){
     fetchCars()
   }, [])
 
-  useEffect(() => {
-    BackHandler.addEventListener('hardwareBackPress', () => {
-      return true;
-    })
-  }, [])
+  // useEffect(() => {
+  //   BackHandler.addEventListener('hardwareBackPress', () => {
+  //     return true;
+  //   })
+  // }, [])
 
   return(
     <Container>
@@ -134,7 +134,7 @@ export function Home(){
 
       }
 
-      <PanGestureHandler
+      {/* <PanGestureHandler
         onGestureEvent={onGestureEvent} 
       >
         <Animated.View
@@ -157,7 +157,7 @@ export function Home(){
             />
           </ButtonAnimated>
         </Animated.View>
-      </PanGestureHandler>
+      </PanGestureHandler> */}
 
     </Container>
  )

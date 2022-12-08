@@ -7,8 +7,20 @@
       "**/*"
     ],
     "splash": {
-      "image": "./assets/splash.png",
       "backgroundColor": "#1b1b1f"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.egestao.rentx"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.egestao.rentx"
     }
   },
   "name": "rentx"

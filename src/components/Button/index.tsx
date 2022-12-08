@@ -22,8 +22,6 @@ export function Button({
   ...rest
 }: Props){
   const { COLORS } = useTheme();
-  console.log({enabled})
-
 
   return(
     <Container 
@@ -35,7 +33,7 @@ export function Button({
       {
         loading ?
         <ActivityIndicator color={COLORS.SHAPE}/> : 
-        <Title>{title}</Title>
+        <Title color={color || COLORS.MAIN}>{title}</Title>
       }
 
     </Container>

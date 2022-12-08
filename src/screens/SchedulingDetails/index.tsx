@@ -64,7 +64,7 @@ export function SchedulingDetails(){
   const [ rentalPeriod, setRentalPeriod ] = useState<RentalPeriod>({} as RentalPeriod);
   const [ loading, setLoading ] = useState(false);
 
-  const rentTotal = Number(dates.length * car.rent.price)
+  const rentTotal = Number(dates.length * car.price)
   
   async function handleConfirmRental() {
     try{
@@ -88,7 +88,11 @@ export function SchedulingDetails(){
         unavailable_dates
       })
 
-      navigation.navigate('schedulingComplete');
+      navigation.navigate('confirmation', {
+        nextScreenRouter: 'home',
+        title: 'Carro Alugado',
+        message: 'Agora você só precisa ir\naté a concessionária da RENTX',
+      });
 
     } catch(e){
       console.log(e)
@@ -131,8 +135,8 @@ export function SchedulingDetails(){
           </Description>
 
           <Rent>
-            <Period>{car.rent.period}</Period>
-            <Price>R$ {car.rent.price}</Price>
+            <Period>{car.period}</Period>
+            <Price>R$ {car.price}</Price>
           </Rent>
         </Details>
 
@@ -177,7 +181,7 @@ export function SchedulingDetails(){
         <RentalPrice>
           <RentalPriceLabel>TOTAL</RentalPriceLabel>
           <RentalPriceDetails>
-            <RentalPriceQuota>R$ {car.rent.price} x{dates.length} diárias</RentalPriceQuota>
+            <RentalPriceQuota>R$ {car.price} x{dates.length} diárias</RentalPriceQuota>
             <RentalPriceTotal>R$ {rentTotal}</RentalPriceTotal>
           </RentalPriceDetails>
         </RentalPrice>

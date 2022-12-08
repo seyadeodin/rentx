@@ -61,7 +61,7 @@ export function Splash(){
   })
 
   async function startApp(){
-    navigation.navigate('home');
+    navigation.navigate('signIn');
   }
 
   useEffect(() => {

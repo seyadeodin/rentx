@@ -5,7 +5,7 @@ import GasolineSvg from '../assets/gasoline.svg'
 import EnergySvg from '../assets/energy.svg'
 import HybridSvg from  '../assets/hybrid.svg'
 import ExchangeSvg from '../assets/exchange.svg'
-import PeopleSvg from '../assets/people.svg'
+import PeopleSvg from '../assets/person.svg'
 import CarSvg from '../assets/car.svg'
 
 export function getAccessoryIcon(type: string){

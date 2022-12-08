@@ -8,6 +8,8 @@ import {
   Inter_500Medium
 } from '@expo-google-fonts/inter'
 
+import { AppProvider } from './src/hooks';
+
 import {
   Archivo_400Regular,
   Archivo_500Medium,
@@ -34,7 +36,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme} >
       <GestureHandlerRootView style={{flex: 1}}>
-        <Routes/>
+        <AppProvider>
+          <Routes/>
+        </AppProvider>
       </GestureHandlerRootView>
     </ThemeProvider>
   );
