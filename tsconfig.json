@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "@styled/typescript-styled-plugin"
+      }
+    ]   
+  },
+  "extends": "expo/tsconfig.base",
+  "include": ["src"],
+  "exclude": ["**/node_modules", "**/.*/"]
+}
